@@ -15,6 +15,6 @@ func New(test *testing.T) Assert {
 
 func (assert Assert) Equal(actual, expected interface{}) {
 	if !reflect.DeepEqual(actual, expected) {
-		assert.test.Errorf("expected: %#+v; got: %#+v", expected, actual)
+		assert.test.Errorf("expected %#+v, got %#+v", expected, actual)
 	}
 }
