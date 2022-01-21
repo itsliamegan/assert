@@ -1,8 +1,7 @@
 assert
 ======
 
-Assert two values are deeply equal (according to reflect.DeepEqual) and fail a
-test if they are not.
+Common assertions for use in Go tests.
 
 	package main
 
@@ -17,5 +16,6 @@ test if they are not.
 
 		result := 2 + 2
 
-		assert.Equal(4, result)
+		assert.Ok(result) // not nil
+		assert.Equal(result, 4) // equal according to reflect.DeepEqual
 	}
