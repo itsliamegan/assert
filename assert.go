@@ -15,7 +15,13 @@ func New(test *testing.T) Assert {
 
 func (assert Assert) Ok(value interface{}) {
 	if value == nil {
-		assert.test.Errorf("expected %#+v to be non-nil")
+		assert.test.Errorf("expected %#+v, got nil", value)
+	}
+}
+
+func (assert Assert) NoErr(err error) {
+	if err != nil {
+		assert.test.Errorf("expected no error, got %#+v", err)
 	}
 }
 

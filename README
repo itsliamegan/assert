@@ -15,7 +15,9 @@ Common assertions for use in Go tests.
 		assert := assert.New(t)
 
 		result := 2 + 2
+		err := nil
 
 		assert.Ok(result) // not nil
+		assert.NoErr(err) // nil
 		assert.Equal(result, 4) // equal according to reflect.DeepEqual
 	}
